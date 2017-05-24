@@ -53,6 +53,18 @@ class IWNLPWrapperTest(unittest.TestCase):
     def test_contains_entry_example6(self):
         self.assertEqual(self.iwnlp.contains_entry('groko', ignore_case=True), True)
 
+    def test_contains_entry_example7(self):
+        self.assertEqual(self.iwnlp.contains_entry('groko', pos='Noun'), False)
+
+    def test_contains_entry_example8(self):
+        self.assertEqual(self.iwnlp.contains_entry('groko', pos='X'), False)
+
+    def test_contains_entry_example9(self):
+        self.assertEqual(self.iwnlp.contains_entry('groko', pos='AdjectivalDeclension'), False)
+
+    def test_contains_entry_example10(self):
+        self.assertEqual(self.iwnlp.contains_entry('groko', pos=["Noun", "X"], ignore_case=True), True)
+
     def test_lemmatize_example1(self):
         predicted = self.iwnlp.lemmatize('Lkws', pos_universal_google='NOUN')
         self.assertEqual(predicted, ['Lkw'])
@@ -60,3 +72,7 @@ class IWNLPWrapperTest(unittest.TestCase):
     def test_lemmatize_example2(self):
         predicted = self.iwnlp.lemmatize('gespielt', pos_universal_google='VERB')
         self.assertEqual(predicted, ['spielen'])
+
+    def test_get_lemmas_example1(self):
+        predicted = self.iwnlp.get_lemmas('groko', pos=["Noun", "X"], ignore_case=True)
+        self.assertEqual(predicted, ['GroKo'])
