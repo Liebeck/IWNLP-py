@@ -23,6 +23,14 @@ class IWNLPWrapperTest(unittest.TestCase):
         predicted = self.iwnlp.lemmatize_plain('birne', ignore_case=True)
         self.assertEqual(predicted, ['Birne'])
 
+    def test_lemmatize_plain_example5(self):
+        predicted = self.iwnlp.lemmatize_plain('gespielt')
+        self.assertEqual(predicted, ['spielen'])
+
+    def test_lemmatize_plain_example6(self):
+        predicted = self.iwnlp.lemmatize_plain('schnell')
+        self.assertCountEqual(predicted, ['schnellen', 'schnell'])
+
     def test_contains_entry_example1(self):
         self.assertEqual(self.iwnlp.contains_entry('Birne'), True)
 
