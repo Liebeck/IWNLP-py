@@ -5,8 +5,9 @@ python:
 install: "pip install -r .travis/requirements.txt"
 
 before_script:
+- echo $TRAVIS_BUILD_DIR
 - chmod +x .travis/download_iwnlp.sh
 - .travis/download_iwnlp.sh
 
 script:
-- py.test --pep8
+- python3 -m py.test
