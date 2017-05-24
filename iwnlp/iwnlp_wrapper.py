@@ -56,7 +56,8 @@ class IWNLPWrapper(object):
                 entries = list(filter(lambda x: x["POS"] == pos and x["Form"] == word, self.lemmatizer[key]))
         else:
             for pos_entry in pos:
-                entries.extend(self.get_lemmas(word, pos_entry, ignore_case))
+                if self.contains_entry(word, pos=pos_entry, ignore_case=ignore_case):
+                    entries.extend(self.get_entries(word, pos_entry, ignore_case))
         return entries
 
     def get_lemmas(self, word, pos=None, ignore_case=False):
