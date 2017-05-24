@@ -2,7 +2,11 @@ language: python
 python:
 - "3.4"
 
-install: "pip install -r .travis.requirements.txt"
+install: "pip install -r .travis/requirements.txt"
+
+after_install:
+- chmod +x .travis/download_iwnlp.sh
+- .travis/download_iwnlp.sh
 
 script:
 - py.test --pep8
