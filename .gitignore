@@ -105,3 +105,4 @@ ENV/
 MANIFEST
 
 data/
+debug.py
