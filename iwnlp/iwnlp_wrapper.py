@@ -1,5 +1,6 @@
 import logging
 import json
+import io
 
 
 class IWNLPWrapper(object):
@@ -16,7 +17,7 @@ class IWNLPWrapper(object):
          of lowercased forms which maps each form to its possible lemmas.
         """
         self.lemmatizer = {}
-        with open(lemmatizer_path, encoding='utf-8') as data_file:
+        with io.open(lemmatizer_path, encoding='utf-8') as data_file:
             raw = json.load(data_file)
             for entry in raw:
                 self.lemmatizer[entry["Form"]] = entry["Lemmas"]
