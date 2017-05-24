@@ -1,4 +1,8 @@
 language: python
+python:
+- "3.4"
+
+install: "pip install -r .travis.requirements.txt"
 
 script:
 - py.test --pep8
