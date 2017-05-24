@@ -14,7 +14,7 @@ pip install iwnlp
 
 # How to use IWNLP-py
 The Python package consists of the *IWNLPWrapper* class. **Keep in mind that the lemmatizer will return *None* for unknown words rather than guessing a lemma. If more than one lemma is found, all lemmas are returned.** In order to lemmatize single words, you can choose between two functions:
-1. *lemmatize*: If you have access to POS tags of your words, you should use this function. The POS tagset is [Google's universal POS tagset](http://universaldependencies.org/u/pos/). The lemmatization performance is tuned to be as high as possible, as listed [here](http://www.iwnlp.com/iwnlp_results.html). [Our paper](http://www.aclweb.org/anthology/P15-2068) describes our approach in more detail. Keep in mind, that our results have much improved over the last two years.
+1. *lemmatize*: If you have access to POS tags of your words, you should use this function. The POS tagset is [Google's universal POS tagset](http://universaldependencies.org/u/pos/). The lemmatization performance is tuned to be as high as possible, as listed [here](http://www.iwnlp.com/iwnlp_results.html). [Our paper](http://www.aclweb.org/anthology/P15-2068) describes our approach in more detail. Keep in mind, that our results have improved a lot over the last two years.
 ``` python
 def lemmatize(self, word, pos_universal_google)
 ```
