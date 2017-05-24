@@ -5,7 +5,7 @@ from iwnlp.iwnlp_wrapper import IWNLPWrapper
 class IWNLPWrapperTest(unittest.TestCase):
     @classmethod
     def setUpClass(self):
-        self.iwnlp = IWNLPWrapper(lemmatizer_path='../data/IWNLP.Lemmatizer_20170501.json')
+        self.iwnlp = IWNLPWrapper(lemmatizer_path='data/IWNLP.Lemmatizer_20170501.json')
 
     def test_lemmatize_plain_example1(self):
         predicted = self.iwnlp.lemmatize_plain('Hallo')
