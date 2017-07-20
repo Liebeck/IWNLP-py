@@ -105,7 +105,7 @@ class IWNLPWrapper(object):
                 return self.get_lemmas(word, "Verb", ignore_case=True)
             else:
                 return None
-        elif pos_universal_google == "VERB":
+        elif pos_universal_google in ["VERB", "AUX"]:
             if self.contains_entry(word, "Verb", ignore_case=True):
                 return self.get_lemmas(word, "Verb", ignore_case=True)
             else:
