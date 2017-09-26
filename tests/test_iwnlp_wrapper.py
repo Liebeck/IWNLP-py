@@ -29,11 +29,15 @@ class IWNLPWrapperTest(unittest.TestCase):
 
     def test_lemmatize_plain_example6(self):
         predicted = self.iwnlp.lemmatize_plain('schnell')
-        self.assertCountEqual(predicted, ['schnellen', 'schnell'])
+        self.assertEqual(predicted, ['schnell', 'schnellen'])
 
     def test_lemmatize_plain_example7(self):
         predicted = self.iwnlp.lemmatize_plain('Gartenhäuser')
         self.assertEqual(predicted, ['Gartenhaus'])
+
+    def test_lemmatize_plain_example8(self):
+        predicted = self.iwnlp.lemmatize_plain('ein')
+        self.assertEqual(predicted, ['ein', 'einen'])
 
     def test_contains_entry_example1(self):
         self.assertEqual(self.iwnlp.contains_entry('Birne'), True)
