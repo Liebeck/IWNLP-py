@@ -67,7 +67,7 @@ class IWNLPWrapper(object):
         """
         entries = self.get_entries(word, pos, ignore_case)
         lemmas = list(set([entry["Lemma"] for entry in entries]))
-        return lemmas
+        return sorted(lemmas)
 
     def lemmatize_plain(self, word, ignore_case=False):
         if self.contains_entry(word, ignore_case=ignore_case):
