@@ -21,6 +21,17 @@ class IWNLPWrapper(object):
             raw = json.load(data_file)
             for entry in raw:
                 self.lemmatizer[entry["Form"]] = entry["Lemmas"]
+        self.apply_blacklist()
+
+    def apply_blacklist(self):
+        self.remove_entry("die", "Noun", "Adsorbens")  # parser error in 20170501.json
+
+    def remove_entry(self, form, pos, lemma):
+        key = form.lower().strip()
+        if key in self.lemmatizer:
+            wrong_entry = {"POS": pos, "Form": form, "Lemma": lemma}
+            if wrong_entry in self.lemmatizer[key]:
+                self.lemmatizer[key].remove(wrong_entry)
 
     def contains_entry(self, word, pos=None, ignore_case=False):
         key = word.lower().strip()

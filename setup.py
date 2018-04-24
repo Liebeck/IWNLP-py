@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name='iwnlp',
     packages=['iwnlp'],
-    version='0.1.6',
+    version='0.1.7',
     description='Python implementation for IWNLP',
     author='Matthias Liebeck',
     author_email='liebeck@cs.uni-duesseldorf.de',
