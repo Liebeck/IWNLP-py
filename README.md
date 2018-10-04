@@ -9,8 +9,7 @@ IWNLP-py is a Python port of [IWNLP.Lemmatizer](https://github.com/Liebeck/IWNLP
 ``` bash
 pip install iwnlp
 ```
-2. Download the latest processed IWNLP dump from http://lager.cs.uni-duesseldorf.de/NLP/IWNLP/IWNLP.Lemmatizer_20170501.zip and unzip it.
-
+2. Download the latest processed IWNLP dump from http://lager.cs.uni-duesseldorf.de/NLP/IWNLP/IWNLP.Lemmatizer_20181001.zip and unzip it.
 
 # How to use IWNLP-py
 The Python package consists of the *IWNLPWrapper* class. **Keep in mind that the lemmatizer will return *None* for unknown words rather than guessing a lemma. If more than one lemma is found, all lemmas are returned.** In order to lemmatize single words, you can choose between two functions:
@@ -21,7 +20,7 @@ def lemmatize(self, word, pos_universal_google)
 Usage:
 ``` python
 from iwnlp.iwnlp_wrapper import IWNLPWrapper
-lemmatizer = IWNLPWrapper(lemmatizer_path='data/IWNLP.Lemmatizer_20170501.json')
+lemmatizer = IWNLPWrapper(lemmatizer_path='data/IWNLP.Lemmatizer_20181001.json')
 lemmatizer.lemmatize('Lkws', pos_universal_google='NOUN')
 # ['Lkw']
 lemmatizer.lemmatize('Onlineauftritten', pos_universal_google='NOUN')
@@ -38,7 +37,7 @@ def lemmatize_plain(self, word, ignore_case=False):
 Usage:
 ``` python
 from iwnlp.iwnlp_wrapper import IWNLPWrapper
-lemmatizer = IWNLPWrapper(lemmatizer_path='data/IWNLP.Lemmatizer_20170501.json')
+lemmatizer = IWNLPWrapper(lemmatizer_path='data/IWNLP.Lemmatizer_20181001.json')
 lemmatizer.lemmatize_plain('birne')
 # no result since the noun is lowercased
 lemmatizer.lemmatize_plain('birne', ignore_case=True)
