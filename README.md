@@ -9,7 +9,7 @@ IWNLP-py is a Python port of [IWNLP.Lemmatizer](https://github.com/Liebeck/IWNLP
 ``` bash
 pip install iwnlp
 ```
-2. Download the latest processed IWNLP dump from http://lager.cs.uni-duesseldorf.de/NLP/IWNLP/IWNLP.Lemmatizer_20181001.zip and unzip it.
+2. Download the latest processed IWNLP dump from https://dbs.cs.uni-duesseldorf.de/datasets/iwnlp/IWNLP.Lemmatizer_20181001.zip and unzip it.
 
 # How to use IWNLP-py
 The Python package consists of the *IWNLPWrapper* class. **Keep in mind that the lemmatizer will return *None* for unknown words rather than guessing a lemma. If more than one lemma is found, all lemmas are returned.** In order to lemmatize single words, you can choose between two functions:
